@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 
@@ -16,7 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'rest_framework.authtoken',
 ]
 
 
@@ -36,7 +36,7 @@ DEFAULT_RENDERER_CLASSES = (
 )
 
 
-ROOT_URLCONF = 'src.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 

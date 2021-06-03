@@ -18,23 +18,21 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     )
 }
 
-JWT_AUTH = {
-    'JWT_VERIFY': True,
-    'JWT_VERIFY_EXPIRATION': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
-    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-}
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'torlis',
+        'USER': 'emackovenko',
+        'PASSWORD': 'trustno1',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
