@@ -1,6 +1,8 @@
-from .common import *
+import os
 import datetime
 import dj_database_url
+from .common import *
+
 
 DEBUG = False
 ALLOWED_HOSTS = ['*']
@@ -21,6 +23,8 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
 }
+
+CELERY_BROKER_URL = os.getenv('REDIS_URL')
 
 CORS_ORIGIN_WHITELIST = [
 ]
